@@ -22,6 +22,11 @@ export default function CartItem() {
   };
 
   const handleDecrement = (item) => {
+    if (item.quantity <= 1) {
+      dispatch(cartActions.removeItem(item.id));
+      return;
+    }
+
     dispatch(cartActions.updateQuantity({
       id: item.id,
       quantity: item.quantity - 1,
@@ -29,7 +34,7 @@ export default function CartItem() {
   };
 
   const handleRemove = (item) => {
-    dispatch(cartActions.removeItem(item.name));
+    dispatch(cartActions.removeItem(item.id));
   };
 
   const handleContinueShopping = () => {
@@ -98,7 +103,7 @@ export default function CartItem() {
 
                   <button
                     type="button"
-                    className="delete-button"
+                    className="cart-item-delete"
                     onClick={() => handleRemove(item)}
                     title="Remove from cart"
                     aria-label={`Remove ${item.name} from cart`}
@@ -131,7 +136,11 @@ export default function CartItem() {
                   <span>${totalAmount.toFixed(2)}</span>
                 </div>
 
-                <button className="checkout-btn" onClick={handleCheckout}>
+                <button
+                  type="button"
+                  className="get-started-button1"
+                  onClick={handleCheckout}
+                >
                   Coming Soon
                 </button>
 

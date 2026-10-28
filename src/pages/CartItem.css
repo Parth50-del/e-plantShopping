@@ -171,7 +171,7 @@
   margin: 0;
 }
 
-.delete-button {
+.cart-item-delete {
   background: #e74c3c;
   border: none;
   color: white;
@@ -184,7 +184,7 @@
   transition: all 0.3s ease;
 }
 
-.delete-button:hover {
+.cart-item-delete:hover {
   background: #c0392b;
   transform: scale(1.1);
 }
@@ -223,7 +223,7 @@
   margin-bottom: 1.5rem;
 }
 
-.checkout-btn {
+.get-started-button1 {
   width: 100%;
   background: #2ecc71;
   color: white;
@@ -237,7 +237,7 @@
   margin-bottom: 1rem;
 }
 
-.checkout-btn:hover {
+.get-started-button1:hover {
   background: #27ae60;
   transform: scale(1.02);
 }
@@ -266,7 +266,7 @@
 
   .item-quantity,
   .item-total,
-  .delete-button {
+  .cart-item-delete {
     grid-column: 2;
     justify-self: start;
   }
@@ -290,7 +290,7 @@
   .item-details,
   .item-quantity,
   .item-total,
-  .delete-button {
+  .cart-item-delete {
     grid-column: 1 !important;
   }
 }
